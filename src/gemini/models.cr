@@ -22,7 +22,7 @@ module Gemini
     # The content of the current conversation with the model. *(Required)*
     # For single-turn queries, this is a single instance. For multi-turn queries  like chat, this is a repeated field
     # that contains the conversation history and the latest request.
-    property contents : Indexable::Mutable(Content)
+    property contents : Array(Content) | Deque(Content)
 
     # A list of Tools the Model may use to generate the next response. *(Optional)*
     property tools : Array(Tool)?
@@ -66,7 +66,7 @@ module Gemini
       request
     end
 
-    def generate_content(data : Indexable::Mutable) : GenerateContentResponse
+    def generate_content(data : Array | Deque) : GenerateContentResponse
       @contents = data
       request
     end
