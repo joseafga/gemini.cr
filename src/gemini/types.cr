@@ -118,17 +118,6 @@ module Gemini
       end
     end
 
-    # Join all text parts of the content
-    def to_s
-      io = IO::Memory.new
-
-      parts.each &.text? do |text|
-        io << text << '\n'
-      end
-
-      io.to_s
-    end
-
     enum Role
       User
       Model

@@ -18,14 +18,24 @@ module Gemini
     @[JSON::Field(key: "modelVersion")]
     getter model_version : String?
 
-    # A quick accessor equivalent to `self.candidates.first.content!.parts`
+    # A quick accessor equivalent to `#candidates.first.content!.parts`
     def parts
       candidates.first.content!.parts
     end
 
-    # A quick accessor equivalent to `self.candidates.first.content!.parts.first.text`
+    # A quick accessor equivalent to `#candidates.first.content!.parts.first.text`
     def text
-      candidates.first.content!.parts.first.text
+      io = IO::Memory.new
+      parts.each &.text? do |text|
+        io << text << '\n'
+      end
+
+      io.to_s.chomp
+    end
+
+    # Alias for `#text`
+    def to_s
+      text
     end
 
     # A response candidate generated from the model.
