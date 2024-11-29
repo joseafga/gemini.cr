@@ -1,7 +1,8 @@
-# gemini
+# Gemini.cr
 
-Google Gemini API written in Crystal. It is not complete, it was created for use in another project, but it may be 
-useful.
+Google Gemini API written in Crystal.
+
+It is not complete, it was created for use in another project, but it may be usable.
 
 ## Installation
 
@@ -19,17 +20,20 @@ useful.
 
 ```crystal
 require "gemini"
+
+Gemini.configure do |config|
+  config.api_key = "GEMINI_API_KEY"
+end
+
+model = Gemini::GenerativeModel.new("gemini-1.5-flash")
+response = model.generate_content("Explain how AI works")
+
+puts response.text
 ```
-
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/gemini/fork>)
+1. Fork it (<https://github.com/joseafga/gemini.cr/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -37,4 +41,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [José Almeida](https://github.com/your-github-user) - creator and maintainer
+- [José Almeida](https://github.com/joseafga) - creator and maintainer
