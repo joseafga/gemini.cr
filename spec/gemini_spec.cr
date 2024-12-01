@@ -8,12 +8,12 @@ describe Gemini do
     response.text.empty?.should be_false
   end
 
-  it "generate content with configuration and force finish by MAX_TOKENS" do
+  it "generate content with configuration and force finish by max tokens" do
     config = Gemini::GenerationConfig.new(max_output_tokens: 1)
     model = Gemini::GenerativeModel.new("gemini-1.5-flash", generation_config: config)
     response = model.generate_content("Explain how AI works")
 
     response.text.empty?.should be_false
-    response.candidates.first.finish_reason.should eq Gemini::FinishReason::MAX_TOKENS
+    response.candidates.first.finish_reason.should eq Gemini::FinishReason::MaxTokens
   end
 end

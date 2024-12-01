@@ -91,10 +91,10 @@ module Gemini
     #
     # See: https://ai.google.dev/api/caching#Mode
     enum Mode
-      MODE_UNSPECIFIED # Unspecified function calling mode. This value should not be used.
-      AUTO             # Model decides to predict either a function call or a natural language response.
-      ANY              # Model is constrained to always predicting a function call only.
-      NONE             # Model will not predict any function call.
+      ModeUnspecified # Unspecified function calling mode. This value should not be used.
+      Auto            # Model decides to predict either a function call or a natural language response.
+      Any             # Model is constrained to always predicting a function call only.
+      None            # Model will not predict any function call.
     end
   end
 end
