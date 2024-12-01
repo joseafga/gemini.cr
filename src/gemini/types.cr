@@ -20,58 +20,53 @@ module Gemini
     end
 
     macro one_of(name)
-          def {{name.var.id}} : {{name.type}}
-            @{{name.var.id}}
-          end
+      property {{name.var.id}} : {{name.type}}
 
-          def {{name.var.id}}=(@{{name.var.id}} : {{name.type}})
-          end
+      {% for type in name.type.types.map(&.stringify) %}
+        {% field = type.underscore %}
 
-          {% for type in name.type.types.map(&.stringify) %}
-            {% field = type.underscore %}
-
-            # if `#data` type is `{{ type.id }}` will return value, or nil if not
-            def {{field.id}}?
-              data.as({{type.id}}) if data.is_a?({{type.id}})
-            end
-
-            # Do not yield if `#data` is a diferent type
-            def {{field.id}}?(&)
-              value = {{field.id}}?
-
-              return if value.nil?
-              yield value
-            end
-
-            # Same as `#{{ field.id }}?` but raise error if nil
-            def {{field.id}}
-              {{field.id}}?.not_nil!
-            end
-          {% end %}
-
-          # Custom JSON deserializable
-          def initialize(pull : JSON::PullParser)
-            pull.read_begin_object
-            {% begin %}
-              case key = pull.read_object_key
-              {% for type in name.type.types.map(&.stringify) %}
-                when {{type.camelcase(lower: true)}}
-                {% if type.downcase == "text" %}
-                  @data = pull.read_string.rstrip
-                {% else %}
-                  @data = {{type.id}}.from_json(pull.read_raw)
-                {% end %}
-              {% end %}
-              else
-                raise "eloquent -- Undefined #{self.class} JSON field: #{key}"
-              end
-            {% end %}
-            pull.read_end_object
-          end
+        # if `#{{name.var.id}}` type is `{{type.id}}` will return value, or nil if not
+        def {{field.id}}?
+          {{name.var.id}}.as({{type.id}}) if {{name.var.id}}.is_a?({{type.id}})
         end
 
+        # Do not yield if `#{{name.var.id}}` is a diferent type
+        def {{field.id}}?(&)
+          value = {{field.id}}?
+
+          return if value.nil?
+          yield value
+        end
+
+        # Same as `#{{ field.id }}?` but raise error if nil
+        def {{field.id}}
+          {{field.id}}?.not_nil!
+        end
+      {% end %}
+
+      # Custom JSON deserializable
+      def initialize(pull : ::JSON::PullParser)
+        location = pull.location
+
+        pull.read_begin_object
+        case key = pull.read_object_key
+          {% for type in name.type.types.map(&.stringify) %}
+            when {{type.camelcase(lower: true)}}
+              {% if type.downcase == "text" %}
+                @{{name.var.id}} = pull.read_string.rstrip
+              {% else %}
+                @{{name.var.id}} = {{type.id}}.from_json(pull.read_raw)
+              {% end %}
+          {% end %}
+        else
+          raise ::JSON::SerializableError.new("Unknown one of type: #{key}", {{@type.id.stringify}}, key, *location, nil)
+        end
+        pull.read_end_object
+      end
+    end
+
     # Custom JSON serializable
-    def to_json(json : JSON::Builder)
+    def to_json(json : ::JSON::Builder)
       json.object do
         if text = text?
           json.field "text", text
