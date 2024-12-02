@@ -75,11 +75,11 @@ module Gemini
       case content_type.media_type
       when "application/json"
         Log.debug { "Received <- #{response.body}" }
+
         begin
           GenerateContentResponse.from_json response.body
         rescue ex : JSON::SerializableError
-          error = Error.from_json response.body, root: "error"
-          raise %(Error #{error.code} - "#{error.message}")
+          raise Gemini::BadResponse.new "Can't parse JSON response", response.body
         end
       else
         raise "Unknown Content-Type: #{response.headers["Content-Type"]}"

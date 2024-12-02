@@ -5,22 +5,22 @@ module Gemini
   struct GenerateContentResponse
     include JSON::Serializable
     # Candidate responses from the model.
-    getter candidates : Array(Candidate)
+    getter candidates : Array(Candidate) = [] of Candidate
 
     # Returns the prompt's feedback related to the content filters.
     @[JSON::Field(key: "promptFeedback")]
-    getter prompt_feedback : PromptFeedback?
+    getter prompt_feedback : PromptFeedback = PromptFeedback.new
 
     # Metadata on the generation requests' token usage. *(Output only)*
     @[JSON::Field(key: "usageMetadata")]
-    getter usage_metadata : UsageMetadata?
+    getter usage_metadata : UsageMetadata
 
     @[JSON::Field(key: "modelVersion")]
     getter model_version : String?
 
     # A quick accessor equivalent to `#candidates.first.content!.parts`
     def parts
-      candidates.first.content!.parts
+      candidates.first.content.parts
     end
 
     # A quick accessor equivalent to `#candidates.first.content!.parts.first.text`
@@ -38,14 +38,17 @@ module Gemini
       text
     end
 
+    def after_initialize
+      raise MissingCandidates.new("Field `#candidates` is empty", prompt_feedback.block_reason) if @candidates.empty?
+    end
+
     # A response candidate generated from the model.
     #
     # See: https://ai.google.dev/api/generate-content#candidate
     struct Candidate
       include JSON::Serializable
       # Generated content returned from the model. *(Output only)*
-      # This is not optional but some finish reasons respond without a content field.
-      getter content : Gemini::Content?
+      getter! content : Gemini::Content
 
       # The reason why the model stopped generating tokens. *(Optional, Output only)*
       # If empty, the model has not stopped generating tokens.
@@ -55,7 +58,7 @@ module Gemini
       # List of ratings for the safety of a response candidate.
       # There is at most one rating per category.
       @[JSON::Field(key: "safetyRatings")]
-      getter safety_ratings : Array(SafetyRating)?
+      getter safety_ratings : Array(SafetyRating) = [] of SafetyRating
 
       # Citation information for model-generated candidate. *(Output only)*
       # This field may be populated with recitation information for any text included in the content. These are passages
@@ -75,12 +78,12 @@ module Gemini
       # Index of the candidate in the list of response candidates. *(Output only)*
       getter index : Int32 = 0
 
-      def content!
-        content.not_nil!
+      def after_initialize
+        raise MissingContent.new("Field `#content` is missing", finish_reason) if @content.nil?
       end
     end
 
-    # A set of the feedback metadata the prompt specified in `Turquoise::Eloquent::Gemini::Content`.
+    # A set of the feedback metadata the prompt specified in `Gemini::Content`.
     #
     # See: https://ai.google.dev/api/generate-content#PromptFeedback
     struct PromptFeedback
@@ -91,7 +94,10 @@ module Gemini
 
       # Ratings for safety of the prompt. There is at most one rating per category.
       @[JSON::Field(key: "safetyRatings")]
-      getter safety_ratings : Array(SafetyRating)
+      getter safety_ratings : Array(SafetyRating) = [] of SafetyRating
+
+      def initialize
+      end
     end
 
     # Metadata on the generation request's token usage.
@@ -102,7 +108,7 @@ module Gemini
       # Number of tokens in the prompt. When cachedContent is set, this is still the total effective prompt size meaning
       # this includes the number of tokens in the cached content.
       @[JSON::Field(key: "promptTokenCount")]
-      getter prompt_token_count : Int32?
+      getter prompt_token_count : Int32
 
       # Number of tokens in the cached part of the prompt (the cached content)
       @[JSON::Field(key: "cachedContentTokenCount")]

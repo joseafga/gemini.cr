@@ -90,20 +90,20 @@ module Gemini
     property role : Role?
     # Ordered Parts that constitute a single message.
     # Parts may have different MIME types.
-    property parts : Array(Part)
+    property parts : Array(Part) = [] of Part
 
     # Create using existing parts or new empty array
-    def initialize(@parts = [] of Part, @role = nil)
+    def initialize(@parts : Array(Part), @role = nil)
     end
 
     # Create content with a single part
     def initialize(part : Part, @role = nil)
-      @parts = [part]
+      @parts << part
     end
 
     # Create content with a text part already
     def initialize(text : String, @role = nil)
-      initialize(Part.new(text), @role)
+      @parts << Part.new(text)
     end
 
     # Remove empty texts `Part` from JSON to fix: "Unable to submit request because it has an empty text parameter."
