@@ -7,7 +7,7 @@ module Gemini
   VERSION = "0.1.0"
   Log     = ::Log.for("gemini")
 
-  class BadResponse < Exception
+  class BadResponseException < Exception
     getter error : Error?
     getter response : String
 
@@ -23,7 +23,7 @@ module Gemini
     end
   end
 
-  class MissingCandidates < Exception
+  class MissingCandidatesException < Exception
     property block_reason : BlockReason
 
     def initialize(@message, block_reason = nil, @cause = nil)
@@ -31,7 +31,7 @@ module Gemini
     end
   end
 
-  class MissingContent < Exception
+  class MissingContentException < Exception
     property finish_reason : FinishReason
 
     def initialize(@message, finish_reason = nil, @cause = nil)

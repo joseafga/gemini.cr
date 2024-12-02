@@ -39,7 +39,7 @@ module Gemini
     end
 
     def after_initialize
-      raise MissingCandidates.new("Field `#candidates` is empty", prompt_feedback.block_reason) if @candidates.empty?
+      raise MissingCandidatesException.new("Field `#candidates` is empty", prompt_feedback.block_reason) if @candidates.empty?
     end
 
     # A response candidate generated from the model.
@@ -79,7 +79,7 @@ module Gemini
       getter index : Int32 = 0
 
       def after_initialize
-        raise MissingContent.new("Field `#content` is missing", finish_reason) if @content.nil?
+        raise MissingContentException.new("Field `#content` is missing", finish_reason) if @content.nil?
       end
     end
 

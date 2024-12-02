@@ -79,7 +79,7 @@ module Gemini
         begin
           GenerateContentResponse.from_json response.body
         rescue ex : JSON::SerializableError
-          raise Gemini::BadResponse.new "Can't parse JSON response", response.body
+          raise Gemini::BadResponseException.new "Can't parse JSON response", response.body
         end
       else
         raise "Unknown Content-Type: #{response.headers["Content-Type"]}"
