@@ -1,9 +1,5 @@
-require "json"
 require "http/client"
 require "mime/media_type"
-require "./types"
-require "./function_calling"
-require "./response"
 
 module Gemini
   # Generates a model response given an input.

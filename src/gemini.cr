@@ -1,6 +1,6 @@
 require "log"
-require "./gemini/configuration"
-require "./gemini/models"
+require "json"
+require "./gemini/**"
 
 # Google Gemini API
 module Gemini
