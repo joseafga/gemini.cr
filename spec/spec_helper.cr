@@ -85,7 +85,7 @@ SAMPLES = {
     "modelVersion": "gemini-1.5-flash-latest"
   }),
 
-  "bad_request_error_00" => %q({
+  "error_00" => %q({
     "error": {
       "code": 400,
       "message": "Invalid JSON payload received. Unknown name \"pars\" at 'system_instruction': Cannot find field.\nInvalid JSON payload received. Unknown name \"xyz\": Cannot find field.",
@@ -105,5 +105,13 @@ SAMPLES = {
         }
       ]
     }
-  })
+  }),
+
+  "error_01" => %q({
+    "error": {
+      "code": 503,
+      "message": "The service is currently unavailable.",
+      "status": "UNAVAILABLE"
+    }
+  }),
 }

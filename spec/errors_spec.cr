@@ -20,13 +20,26 @@ describe Gemini do
   it "exception by bad request", tags: "error" do
     ex = expect_raises(Gemini::BadResponseException) do
       expect_raises(JSON::SerializableError) do
-        Gemini::GenerateContentResponse.from_json SAMPLES["bad_request_error_00"]
+        Gemini::GenerateContentResponse.from_json SAMPLES["error_00"]
       end
 
-      raise Gemini::BadResponseException.new "Can't parse JSON response", SAMPLES["bad_request_error_00"]
+      raise Gemini::BadResponseException.new "Can't parse JSON response", SAMPLES["error_00"]
     end
 
     ex.error.try &.code.should eq 400
     ex.error.try &.status.should eq "INVALID_ARGUMENT"
+  end
+
+  it "exception by the service is currently unavailable", tags: "error" do
+    ex = expect_raises(Gemini::BadResponseException) do
+      expect_raises(JSON::SerializableError) do
+        Gemini::GenerateContentResponse.from_json SAMPLES["error_01"]
+      end
+
+      raise Gemini::BadResponseException.new "Can't parse JSON response", SAMPLES["error_01"]
+    end
+
+    ex.error.try &.code.should eq 503
+    ex.error.try &.status.should eq "UNAVAILABLE"
   end
 end
