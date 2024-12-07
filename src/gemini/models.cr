@@ -18,7 +18,7 @@ module Gemini
     # The content of the current conversation with the model. *(Required)*
     # For single-turn queries, this is a single instance. For multi-turn queries  like chat, this is a repeated field
     # that contains the conversation history and the latest request.
-    property contents : Array(Content) | Deque(Content)
+    property! contents : Array(Content) | Deque(Content) | Content
 
     # A list of Tools the Model may use to generate the next response. *(Optional)*
     property tools : Array(Tool)?
@@ -51,14 +51,14 @@ module Gemini
       @generation_config = nil,
       @safety_settings = nil,
       @tools = nil,
-      @cached_content = nil,
-      @contents = [] of Content
+      @tool_config = nil,
+      @cached_content = nil
     )
       @endpoint = "https://generativelanguage.googleapis.com/v1beta/models/#{model_name}:generateContent?key=#{Gemini.config.api_key}"
     end
 
     def generate_content(text : String) : GenerateContentResponse
-      @contents << Content.new(text, :user)
+      @contents = Content.new(text, :user)
       request
     end
 
@@ -82,7 +82,7 @@ module Gemini
           raise Gemini::BadResponseException.new "Can't parse JSON response", response.body
         end
       else
-        raise "Unknown Content-Type: #{response.headers["Content-Type"]}"
+        raise "Unknown Content-Type: #{content_type.media_type}"
       end
     end
   end
