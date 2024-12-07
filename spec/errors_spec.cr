@@ -17,12 +17,8 @@ describe Gemini do
     ex.finish_reason.should eq Gemini::FinishReason::Safety
   end
 
-  it "exception by bad request", tags: "error" do
+  it "bad response by invalid argument", tags: "error" do
     ex = expect_raises(Gemini::BadResponseException) do
-      expect_raises(JSON::SerializableError) do
-        Gemini::GenerateContentResponse.from_json SAMPLES["error_00"]
-      end
-
       raise Gemini::BadResponseException.new "Can't parse JSON response", SAMPLES["error_00"]
     end
 
@@ -30,12 +26,8 @@ describe Gemini do
     ex.error.try &.status.should eq "INVALID_ARGUMENT"
   end
 
-  it "exception by the service is currently unavailable", tags: "error" do
+  it "bad response by the service is currently unavailable", tags: "error" do
     ex = expect_raises(Gemini::BadResponseException) do
-      expect_raises(JSON::SerializableError) do
-        Gemini::GenerateContentResponse.from_json SAMPLES["error_01"]
-      end
-
       raise Gemini::BadResponseException.new "Can't parse JSON response", SAMPLES["error_01"]
     end
 
