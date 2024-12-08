@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.13.3">
+<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="crystal_docs.project_name" content="gemini">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="gemini">
+  <title>Gemini::Text - gemini 0.2.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          gemini
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.2.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="gemini/Gemini" data-name="gemini">
+      <a href="../Gemini.html">Gemini</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/BadResponseException" data-name="gemini::badresponseexception">
+      <a href="../Gemini/BadResponseException.html">BadResponseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/BlockReason" data-name="gemini::blockreason">
+      <a href="../Gemini/BlockReason.html">BlockReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Configuration" data-name="gemini::configuration">
+      <a href="../Gemini/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Content" data-name="gemini::content">
+      <a href="../Gemini/Content.html">Content</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Content/Role" data-name="gemini::content::role">
+      <a href="../Gemini/Content/Role.html">Role</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Error" data-name="gemini::error">
+      <a href="../Gemini/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FinishReason" data-name="gemini::finishreason">
+      <a href="../Gemini/FinishReason.html">FinishReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCall" data-name="gemini::functioncall">
+      <a href="../Gemini/FunctionCall.html">FunctionCall</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/FunctionCallingConfig" data-name="gemini::functioncallingconfig">
+      <a href="../Gemini/FunctionCallingConfig.html">FunctionCallingConfig</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCallingConfig/Mode" data-name="gemini::functioncallingconfig::mode">
+      <a href="../Gemini/FunctionCallingConfig/Mode.html">Mode</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionDeclaration" data-name="gemini::functiondeclaration">
+      <a href="../Gemini/FunctionDeclaration.html">FunctionDeclaration</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionResponse" data-name="gemini::functionresponse">
+      <a href="../Gemini/FunctionResponse.html">FunctionResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/GenerateContentResponse" data-name="gemini::generatecontentresponse">
+      <a href="../Gemini/GenerateContentResponse.html">GenerateContentResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/Candidate" data-name="gemini::generatecontentresponse::candidate">
+      <a href="../Gemini/GenerateContentResponse/Candidate.html">Candidate</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/PromptFeedback" data-name="gemini::generatecontentresponse::promptfeedback">
+      <a href="../Gemini/GenerateContentResponse/PromptFeedback.html">PromptFeedback</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/UsageMetadata" data-name="gemini::generatecontentresponse::usagemetadata">
+      <a href="../Gemini/GenerateContentResponse/UsageMetadata.html">UsageMetadata</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerationConfig" data-name="gemini::generationconfig">
+      <a href="../Gemini/GenerationConfig.html">GenerationConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerativeModel" data-name="gemini::generativemodel">
+      <a href="../Gemini/GenerativeModel.html">GenerativeModel</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmBlockThreshold" data-name="gemini::harmblockthreshold">
+      <a href="../Gemini/HarmBlockThreshold.html">HarmBlockThreshold</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmCategory" data-name="gemini::harmcategory">
+      <a href="../Gemini/HarmCategory.html">HarmCategory</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmProbability" data-name="gemini::harmprobability">
+      <a href="../Gemini/HarmProbability.html">HarmProbability</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingCandidatesException" data-name="gemini::missingcandidatesexception">
+      <a href="../Gemini/MissingCandidatesException.html">MissingCandidatesException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingContentException" data-name="gemini::missingcontentexception">
+      <a href="../Gemini/MissingContentException.html">MissingContentException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Part" data-name="gemini::part">
+      <a href="../Gemini/Part.html">Part</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetyRating" data-name="gemini::safetyrating">
+      <a href="../Gemini/SafetyRating.html">SafetyRating</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetySetting" data-name="gemini::safetysetting">
+      <a href="../Gemini/SafetySetting.html">SafetySetting</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Schema" data-name="gemini::schema">
+      <a href="../Gemini/Schema.html">Schema</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Schema/Type" data-name="gemini::schema::type">
+      <a href="../Gemini/Schema/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="gemini/Gemini/Text" data-name="gemini::text">
+      <a href="../Gemini/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Tool" data-name="gemini::tool">
+      <a href="../Gemini/Tool.html">Tool</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/ToolConfig" data-name="gemini::toolconfig">
+      <a href="../Gemini/ToolConfig.html">ToolConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">alias</span> Gemini::<wbr>Text
+
+</h1>
+
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p><code>Part</code> inline text data type</p>
+
+
+
+  <h2>
+    <a id="alias-definition" class="anchor" href="#alias-definition">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Alias Definition
+  </h2>
+  <code>String</code>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      gemini/types.cr
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

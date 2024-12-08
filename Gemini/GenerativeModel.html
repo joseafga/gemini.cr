@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.13.3">
+<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="crystal_docs.project_name" content="gemini">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="gemini">
+  <title>Gemini::GenerativeModel - gemini 0.2.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          gemini
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.2.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="gemini/Gemini" data-name="gemini">
+      <a href="../Gemini.html">Gemini</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/BadResponseException" data-name="gemini::badresponseexception">
+      <a href="../Gemini/BadResponseException.html">BadResponseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/BlockReason" data-name="gemini::blockreason">
+      <a href="../Gemini/BlockReason.html">BlockReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Configuration" data-name="gemini::configuration">
+      <a href="../Gemini/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Content" data-name="gemini::content">
+      <a href="../Gemini/Content.html">Content</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Content/Role" data-name="gemini::content::role">
+      <a href="../Gemini/Content/Role.html">Role</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Error" data-name="gemini::error">
+      <a href="../Gemini/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FinishReason" data-name="gemini::finishreason">
+      <a href="../Gemini/FinishReason.html">FinishReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCall" data-name="gemini::functioncall">
+      <a href="../Gemini/FunctionCall.html">FunctionCall</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/FunctionCallingConfig" data-name="gemini::functioncallingconfig">
+      <a href="../Gemini/FunctionCallingConfig.html">FunctionCallingConfig</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCallingConfig/Mode" data-name="gemini::functioncallingconfig::mode">
+      <a href="../Gemini/FunctionCallingConfig/Mode.html">Mode</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionDeclaration" data-name="gemini::functiondeclaration">
+      <a href="../Gemini/FunctionDeclaration.html">FunctionDeclaration</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionResponse" data-name="gemini::functionresponse">
+      <a href="../Gemini/FunctionResponse.html">FunctionResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/GenerateContentResponse" data-name="gemini::generatecontentresponse">
+      <a href="../Gemini/GenerateContentResponse.html">GenerateContentResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/Candidate" data-name="gemini::generatecontentresponse::candidate">
+      <a href="../Gemini/GenerateContentResponse/Candidate.html">Candidate</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/PromptFeedback" data-name="gemini::generatecontentresponse::promptfeedback">
+      <a href="../Gemini/GenerateContentResponse/PromptFeedback.html">PromptFeedback</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/UsageMetadata" data-name="gemini::generatecontentresponse::usagemetadata">
+      <a href="../Gemini/GenerateContentResponse/UsageMetadata.html">UsageMetadata</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerationConfig" data-name="gemini::generationconfig">
+      <a href="../Gemini/GenerationConfig.html">GenerationConfig</a>
+      
+    </li>
+  
+  <li class=" current" data-id="gemini/Gemini/GenerativeModel" data-name="gemini::generativemodel">
+      <a href="../Gemini/GenerativeModel.html">GenerativeModel</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmBlockThreshold" data-name="gemini::harmblockthreshold">
+      <a href="../Gemini/HarmBlockThreshold.html">HarmBlockThreshold</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmCategory" data-name="gemini::harmcategory">
+      <a href="../Gemini/HarmCategory.html">HarmCategory</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmProbability" data-name="gemini::harmprobability">
+      <a href="../Gemini/HarmProbability.html">HarmProbability</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingCandidatesException" data-name="gemini::missingcandidatesexception">
+      <a href="../Gemini/MissingCandidatesException.html">MissingCandidatesException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingContentException" data-name="gemini::missingcontentexception">
+      <a href="../Gemini/MissingContentException.html">MissingContentException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Part" data-name="gemini::part">
+      <a href="../Gemini/Part.html">Part</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetyRating" data-name="gemini::safetyrating">
+      <a href="../Gemini/SafetyRating.html">SafetyRating</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetySetting" data-name="gemini::safetysetting">
+      <a href="../Gemini/SafetySetting.html">SafetySetting</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Schema" data-name="gemini::schema">
+      <a href="../Gemini/Schema.html">Schema</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Schema/Type" data-name="gemini::schema::type">
+      <a href="../Gemini/Schema/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Text" data-name="gemini::text">
+      <a href="../Gemini/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Tool" data-name="gemini::tool">
+      <a href="../Gemini/Tool.html">Tool</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/ToolConfig" data-name="gemini::toolconfig">
+      <a href="../Gemini/ToolConfig.html">ToolConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Gemini::<wbr>GenerativeModel
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Gemini/GenerativeModel.html">Gemini::GenerativeModel</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Generates a model response given an input.</p>
+<p><a href="https://ai.google.dev/api/generate-content#method:-models.generatecontent">API Reference</a></p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      gemini/models.cr
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="HEADERS">
+        <strong>HEADERS</strong> = <code><span class="t">HTTP</span><span class="t">::</span><span class="t">Headers</span> {<span class="s">&quot;Content-Type&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;application/json&quot;</span>}</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28model_name%3AString%2Csystem_instruction%3AGemini%3A%3AContent%7CNil%3Dnil%2Cgeneration_config%3AGemini%3A%3AGenerationConfig%7CNil%3Dnil%2Csafety_settings%3ANil%7CArray%28Gemini%3A%3ASafetySetting%29%3Dnil%2Ctools%3ANil%7CArray%28Gemini%3A%3ATool%29%3Dnil%2Ctool_config%3AGemini%3A%3AToolConfig%7CNil%3Dnil%2Ccached_content%3ANil%7CString%3Dnil%29-class-method" class="signature"><strong>.new</strong>(model_name : String, system_instruction : Gemini::Content | Nil = <span class="n">nil</span>, generation_config : Gemini::GenerationConfig | Nil = <span class="n">nil</span>, safety_settings : Nil | Array(Gemini::SafetySetting) = <span class="n">nil</span>, tools : Nil | Array(Gemini::Tool) = <span class="n">nil</span>, tool_config : Gemini::ToolConfig | Nil = <span class="n">nil</span>, cached_content : Nil | String = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Configuration parameters are optional and non-initialized, so they must be defined later</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cached_content%3AString%7CNil-instance-method" class="signature"><strong>#cached_content</strong> : String | Nil</a>
+        
+          <div class="summary"><p>The name of the content <a href="https://ai.google.dev/gemini-api/docs/caching">cached</a> to use as context to serve the prediction.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#cached_content%3D%28cached_content%3AString%7CNil%29-instance-method" class="signature"><strong>#cached_content=</strong>(cached_content : String | Nil)</a>
+        
+          <div class="summary"><p>The name of the content <a href="https://ai.google.dev/gemini-api/docs/caching">cached</a> to use as context to serve the prediction.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contents%3AArray%28Content%29%7CDeque%28Content%29%7CContent-instance-method" class="signature"><strong>#contents</strong> : Array(Content) | Deque(Content) | Content</a>
+        
+          <div class="summary"><p>The content of the current conversation with the model.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contents%3D%28contents%3AArray%28Content%29%7CDeque%28Content%29%7CContent%29-instance-method" class="signature"><strong>#contents=</strong>(contents : Array(Content) | Deque(Content) | Content)</a>
+        
+          <div class="summary"><p>The content of the current conversation with the model.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#contents%3F%3AArray%28Content%29%7CDeque%28Content%29%7CContent%7CNil-instance-method" class="signature"><strong>#contents?</strong> : Array(Content) | Deque(Content) | Content | Nil</a>
+        
+          <div class="summary"><p>The content of the current conversation with the model.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#generate_content%28text%3AString%29%3AGenerateContentResponse-instance-method" class="signature"><strong>#generate_content</strong>(text : String) : GenerateContentResponse</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#generate_content%28data%3AArray%7CDeque%29%3AGenerateContentResponse-instance-method" class="signature"><strong>#generate_content</strong>(data : Array | Deque) : GenerateContentResponse</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#generation_config%3AGenerationConfig%7CNil-instance-method" class="signature"><strong>#generation_config</strong> : GenerationConfig | Nil</a>
+        
+          <div class="summary"><p>Configuration options for model generation and outputs.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#generation_config%3D%28generation_config%3AGenerationConfig%7CNil%29-instance-method" class="signature"><strong>#generation_config=</strong>(generation_config : GenerationConfig | Nil)</a>
+        
+          <div class="summary"><p>Configuration options for model generation and outputs.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#safety_settings%3AArray%28SafetySetting%29%7CNil-instance-method" class="signature"><strong>#safety_settings</strong> : Array(SafetySetting) | Nil</a>
+        
+          <div class="summary"><p>A list of unique SafetySetting instances for blocking unsafe content.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#safety_settings%3D%28safety_settings%3AArray%28SafetySetting%29%7CNil%29-instance-method" class="signature"><strong>#safety_settings=</strong>(safety_settings : Array(SafetySetting) | Nil)</a>
+        
+          <div class="summary"><p>A list of unique SafetySetting instances for blocking unsafe content.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_instruction%3AContent%7CNil-instance-method" class="signature"><strong>#system_instruction</strong> : Content | Nil</a>
+        
+          <div class="summary"><p>Developer set <code>system instruction(s)</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#system_instruction%3D%28system_instruction%3AContent%7CNil%29-instance-method" class="signature"><strong>#system_instruction=</strong>(system_instruction : Content | Nil)</a>
+        
+          <div class="summary"><p>Developer set <code>system instruction(s)</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tool_config%3AToolConfig%7CNil-instance-method" class="signature"><strong>#tool_config</strong> : ToolConfig | Nil</a>
+        
+          <div class="summary"><p>Tool configuration for any Tool specified in the request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tool_config%3D%28tool_config%3AToolConfig%7CNil%29-instance-method" class="signature"><strong>#tool_config=</strong>(tool_config : ToolConfig | Nil)</a>
+        
+          <div class="summary"><p>Tool configuration for any Tool specified in the request.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tools%3AArray%28Tool%29%7CNil-instance-method" class="signature"><strong>#tools</strong> : Array(Tool) | Nil</a>
+        
+          <div class="summary"><p>A list of Tools the Model may use to generate the next response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tools%3D%28tools%3AArray%28Tool%29%7CNil%29-instance-method" class="signature"><strong>#tools=</strong>(tools : Array(Tool) | Nil)</a>
+        
+          <div class="summary"><p>A list of Tools the Model may use to generate the next response.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(model_name:String,system_instruction:Gemini::Content|Nil=nil,generation_config:Gemini::GenerationConfig|Nil=nil,safety_settings:Nil|Array(Gemini::SafetySetting)=nil,tools:Nil|Array(Gemini::Tool)=nil,tool_config:Gemini::ToolConfig|Nil=nil,cached_content:Nil|String=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(model_name : String, system_instruction : <a href="../Gemini/Content.html">Gemini::Content</a> | Nil = <span class="n">nil</span>, generation_config : <a href="../Gemini/GenerationConfig.html">Gemini::GenerationConfig</a> | Nil = <span class="n">nil</span>, safety_settings : Nil | Array(<a href="../Gemini/SafetySetting.html">Gemini::SafetySetting</a>) = <span class="n">nil</span>, tools : Nil | Array(<a href="../Gemini/Tool.html">Gemini::Tool</a>) = <span class="n">nil</span>, tool_config : <a href="../Gemini/ToolConfig.html">Gemini::ToolConfig</a> | Nil = <span class="n">nil</span>, cached_content : Nil | String = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28model_name%3AString%2Csystem_instruction%3AGemini%3A%3AContent%7CNil%3Dnil%2Cgeneration_config%3AGemini%3A%3AGenerationConfig%7CNil%3Dnil%2Csafety_settings%3ANil%7CArray%28Gemini%3A%3ASafetySetting%29%3Dnil%2Ctools%3ANil%7CArray%28Gemini%3A%3ATool%29%3Dnil%2Ctool_config%3AGemini%3A%3AToolConfig%7CNil%3Dnil%2Ccached_content%3ANil%7CString%3Dnil%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configuration parameters are optional and non-initialized, so they must be defined later</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="cached_content:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>cached_content</strong> : String | Nil
+
+        <a class="method-permalink" href="#cached_content%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The name of the content <a href="https://ai.google.dev/gemini-api/docs/caching">cached</a> to use as context to serve the
+prediction. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="cached_content=(cached_content:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>cached_content=</strong>(cached_content : String | Nil)
+
+        <a class="method-permalink" href="#cached_content%3D%28cached_content%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The name of the content <a href="https://ai.google.dev/gemini-api/docs/caching">cached</a> to use as context to serve the
+prediction. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contents:Array(Content)|Deque(Content)|Content-instance-method">
+      <div class="signature">
+        
+        def <strong>contents</strong> : Array(<a href="../Gemini/Content.html">Content</a>) | Deque(<a href="../Gemini/Content.html">Content</a>) | <a href="../Gemini/Content.html">Content</a>
+
+        <a class="method-permalink" href="#contents%3AArray%28Content%29%7CDeque%28Content%29%7CContent-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The content of the current conversation with the model. <em>(Required)</em>
+For single-turn queries, this is a single instance. For multi-turn queries  like chat, this is a repeated field
+that contains the conversation history and the latest request.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contents=(contents:Array(Content)|Deque(Content)|Content)-instance-method">
+      <div class="signature">
+        
+        def <strong>contents=</strong>(contents : Array(<a href="../Gemini/Content.html">Content</a>) | Deque(<a href="../Gemini/Content.html">Content</a>) | <a href="../Gemini/Content.html">Content</a>)
+
+        <a class="method-permalink" href="#contents%3D%28contents%3AArray%28Content%29%7CDeque%28Content%29%7CContent%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The content of the current conversation with the model. <em>(Required)</em>
+For single-turn queries, this is a single instance. For multi-turn queries  like chat, this is a repeated field
+that contains the conversation history and the latest request.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="contents?:Array(Content)|Deque(Content)|Content|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>contents?</strong> : Array(<a href="../Gemini/Content.html">Content</a>) | Deque(<a href="../Gemini/Content.html">Content</a>) | <a href="../Gemini/Content.html">Content</a> | Nil
+
+        <a class="method-permalink" href="#contents%3F%3AArray%28Content%29%7CDeque%28Content%29%7CContent%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The content of the current conversation with the model. <em>(Required)</em>
+For single-turn queries, this is a single instance. For multi-turn queries  like chat, this is a repeated field
+that contains the conversation history and the latest request.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="generate_content(text:String):GenerateContentResponse-instance-method">
+      <div class="signature">
+        
+        def <strong>generate_content</strong>(text : String) : <a href="../Gemini/GenerateContentResponse.html">GenerateContentResponse</a>
+
+        <a class="method-permalink" href="#generate_content%28text%3AString%29%3AGenerateContentResponse-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="generate_content(data:Array|Deque):GenerateContentResponse-instance-method">
+      <div class="signature">
+        
+        def <strong>generate_content</strong>(data : Array | Deque) : <a href="../Gemini/GenerateContentResponse.html">GenerateContentResponse</a>
+
+        <a class="method-permalink" href="#generate_content%28data%3AArray%7CDeque%29%3AGenerateContentResponse-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="generation_config:GenerationConfig|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>generation_config</strong> : <a href="../Gemini/GenerationConfig.html">GenerationConfig</a> | Nil
+
+        <a class="method-permalink" href="#generation_config%3AGenerationConfig%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configuration options for model generation and outputs. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="generation_config=(generation_config:GenerationConfig|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>generation_config=</strong>(generation_config : <a href="../Gemini/GenerationConfig.html">GenerationConfig</a> | Nil)
+
+        <a class="method-permalink" href="#generation_config%3D%28generation_config%3AGenerationConfig%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Configuration options for model generation and outputs. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="safety_settings:Array(SafetySetting)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>safety_settings</strong> : Array(<a href="../Gemini/SafetySetting.html">SafetySetting</a>) | Nil
+
+        <a class="method-permalink" href="#safety_settings%3AArray%28SafetySetting%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of unique SafetySetting instances for blocking unsafe content. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="safety_settings=(safety_settings:Array(SafetySetting)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>safety_settings=</strong>(safety_settings : Array(<a href="../Gemini/SafetySetting.html">SafetySetting</a>) | Nil)
+
+        <a class="method-permalink" href="#safety_settings%3D%28safety_settings%3AArray%28SafetySetting%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of unique SafetySetting instances for blocking unsafe content. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_instruction:Content|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>system_instruction</strong> : <a href="../Gemini/Content.html">Content</a> | Nil
+
+        <a class="method-permalink" href="#system_instruction%3AContent%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Developer set <code>system instruction(s)</code>. Currently, text only. <em>(Optional)</em></p>
+<p><a href="https://ai.google.dev/gemini-api/docs/system-instructions">API Reference</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="system_instruction=(system_instruction:Content|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>system_instruction=</strong>(system_instruction : <a href="../Gemini/Content.html">Content</a> | Nil)
+
+        <a class="method-permalink" href="#system_instruction%3D%28system_instruction%3AContent%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Developer set <code>system instruction(s)</code>. Currently, text only. <em>(Optional)</em></p>
+<p><a href="https://ai.google.dev/gemini-api/docs/system-instructions">API Reference</a></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tool_config:ToolConfig|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>tool_config</strong> : <a href="../Gemini/ToolConfig.html">ToolConfig</a> | Nil
+
+        <a class="method-permalink" href="#tool_config%3AToolConfig%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tool configuration for any Tool specified in the request. Refer to the Function calling guide for a usage example.
+<em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tool_config=(tool_config:ToolConfig|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>tool_config=</strong>(tool_config : <a href="../Gemini/ToolConfig.html">ToolConfig</a> | Nil)
+
+        <a class="method-permalink" href="#tool_config%3D%28tool_config%3AToolConfig%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tool configuration for any Tool specified in the request. Refer to the Function calling guide for a usage example.
+<em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tools:Array(Tool)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>tools</strong> : Array(<a href="../Gemini/Tool.html">Tool</a>) | Nil
+
+        <a class="method-permalink" href="#tools%3AArray%28Tool%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of Tools the Model may use to generate the next response. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tools=(tools:Array(Tool)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>tools=</strong>(tools : Array(<a href="../Gemini/Tool.html">Tool</a>) | Nil)
+
+        <a class="method-permalink" href="#tools%3D%28tools%3AArray%28Tool%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of Tools the Model may use to generate the next response. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>

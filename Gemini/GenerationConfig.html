@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.13.3">
+<meta name="crystal_docs.project_version" content="0.2.0">
+<meta name="crystal_docs.project_name" content="gemini">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="gemini">
+  <title>Gemini::GenerationConfig - gemini 0.2.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          gemini
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.2.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="gemini/Gemini" data-name="gemini">
+      <a href="../Gemini.html">Gemini</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/BadResponseException" data-name="gemini::badresponseexception">
+      <a href="../Gemini/BadResponseException.html">BadResponseException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/BlockReason" data-name="gemini::blockreason">
+      <a href="../Gemini/BlockReason.html">BlockReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Configuration" data-name="gemini::configuration">
+      <a href="../Gemini/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Content" data-name="gemini::content">
+      <a href="../Gemini/Content.html">Content</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Content/Role" data-name="gemini::content::role">
+      <a href="../Gemini/Content/Role.html">Role</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Error" data-name="gemini::error">
+      <a href="../Gemini/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FinishReason" data-name="gemini::finishreason">
+      <a href="../Gemini/FinishReason.html">FinishReason</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCall" data-name="gemini::functioncall">
+      <a href="../Gemini/FunctionCall.html">FunctionCall</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/FunctionCallingConfig" data-name="gemini::functioncallingconfig">
+      <a href="../Gemini/FunctionCallingConfig.html">FunctionCallingConfig</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionCallingConfig/Mode" data-name="gemini::functioncallingconfig::mode">
+      <a href="../Gemini/FunctionCallingConfig/Mode.html">Mode</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionDeclaration" data-name="gemini::functiondeclaration">
+      <a href="../Gemini/FunctionDeclaration.html">FunctionDeclaration</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/FunctionResponse" data-name="gemini::functionresponse">
+      <a href="../Gemini/FunctionResponse.html">FunctionResponse</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/GenerateContentResponse" data-name="gemini::generatecontentresponse">
+      <a href="../Gemini/GenerateContentResponse.html">GenerateContentResponse</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/Candidate" data-name="gemini::generatecontentresponse::candidate">
+      <a href="../Gemini/GenerateContentResponse/Candidate.html">Candidate</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/PromptFeedback" data-name="gemini::generatecontentresponse::promptfeedback">
+      <a href="../Gemini/GenerateContentResponse/PromptFeedback.html">PromptFeedback</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerateContentResponse/UsageMetadata" data-name="gemini::generatecontentresponse::usagemetadata">
+      <a href="../Gemini/GenerateContentResponse/UsageMetadata.html">UsageMetadata</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="gemini/Gemini/GenerationConfig" data-name="gemini::generationconfig">
+      <a href="../Gemini/GenerationConfig.html">GenerationConfig</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/GenerativeModel" data-name="gemini::generativemodel">
+      <a href="../Gemini/GenerativeModel.html">GenerativeModel</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmBlockThreshold" data-name="gemini::harmblockthreshold">
+      <a href="../Gemini/HarmBlockThreshold.html">HarmBlockThreshold</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmCategory" data-name="gemini::harmcategory">
+      <a href="../Gemini/HarmCategory.html">HarmCategory</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/HarmProbability" data-name="gemini::harmprobability">
+      <a href="../Gemini/HarmProbability.html">HarmProbability</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingCandidatesException" data-name="gemini::missingcandidatesexception">
+      <a href="../Gemini/MissingCandidatesException.html">MissingCandidatesException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/MissingContentException" data-name="gemini::missingcontentexception">
+      <a href="../Gemini/MissingContentException.html">MissingContentException</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Part" data-name="gemini::part">
+      <a href="../Gemini/Part.html">Part</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetyRating" data-name="gemini::safetyrating">
+      <a href="../Gemini/SafetyRating.html">SafetyRating</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/SafetySetting" data-name="gemini::safetysetting">
+      <a href="../Gemini/SafetySetting.html">SafetySetting</a>
+      
+    </li>
+  
+  <li class="parent " data-id="gemini/Gemini/Schema" data-name="gemini::schema">
+      <a href="../Gemini/Schema.html">Schema</a>
+      
+        <ul>
+  
+  <li class=" " data-id="gemini/Gemini/Schema/Type" data-name="gemini::schema::type">
+      <a href="../Gemini/Schema/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Text" data-name="gemini::text">
+      <a href="../Gemini/Text.html">Text</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/Tool" data-name="gemini::tool">
+      <a href="../Gemini/Tool.html">Tool</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/ToolConfig" data-name="gemini::toolconfig">
+      <a href="../Gemini/ToolConfig.html">ToolConfig</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> Gemini::<wbr>GenerationConfig
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Gemini/GenerationConfig.html">Gemini::GenerationConfig</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Configuration options for model generation and outputs.
+Not all parameters are configurable for every model.</p>
+<p><a href="https://ai.google.dev/api/generate-content#generationconfig">API Reference</a></p>
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      gemini/models.cr
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28candidate_count%3AInt32%7CNil%3Dnil%2Cstop_sequences%3ANil%7CArray%28String%29%3Dnil%2Ctemperature%3AFloat64%7CNil%3Dnil%2Cmax_output_tokens%3AInt32%7CNil%3Dnil%2Ctop_k%3AInt32%7CNil%3Dnil%2Ctop_p%3AFloat64%7CNil%3Dnil%2Cresponse_mime_type%3ANil%7CString%3Dnil%2Cresponse_schema%3ANil%7CGemini%3A%3ASchema%3Dnil%2Cpresence_penalty%3AFloat64%7CNil%3Dnil%2Cfrequency_penalty%3AFloat64%7CNil%3Dnil%2Cresponse_logprobs%3ABool%7CNil%3Dnil%2Clogprobs%3AInt32%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(candidate_count : Int32 | Nil = <span class="n">nil</span>, stop_sequences : Nil | Array(String) = <span class="n">nil</span>, temperature : Float64 | Nil = <span class="n">nil</span>, max_output_tokens : Int32 | Nil = <span class="n">nil</span>, top_k : Int32 | Nil = <span class="n">nil</span>, top_p : Float64 | Nil = <span class="n">nil</span>, response_mime_type : Nil | String = <span class="n">nil</span>, response_schema : Nil | Gemini::Schema = <span class="n">nil</span>, presence_penalty : Float64 | Nil = <span class="n">nil</span>, frequency_penalty : Float64 | Nil = <span class="n">nil</span>, response_logprobs : Bool | Nil = <span class="n">nil</span>, logprobs : Int32 | Nil = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#candidate_count%3AInt32%7CNil-instance-method" class="signature"><strong>#candidate_count</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Number of generated responses to return.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#candidate_count%3D%28candidate_count%3AInt32%7CNil%29-instance-method" class="signature"><strong>#candidate_count=</strong>(candidate_count : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Number of generated responses to return.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#frequency_penalty%3AFloat64%7CNil-instance-method" class="signature"><strong>#frequency_penalty</strong> : Float64 | Nil</a>
+        
+          <div class="summary"><p>Frequency penalty applied to the next token's logprobs, multiplied by the number of times each token has been seen in the response so far.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#frequency_penalty%3D%28frequency_penalty%3AFloat64%7CNil%29-instance-method" class="signature"><strong>#frequency_penalty=</strong>(frequency_penalty : Float64 | Nil)</a>
+        
+          <div class="summary"><p>Frequency penalty applied to the next token's logprobs, multiplied by the number of times each token has been seen in the response so far.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#logprobs%3AInt32%7CNil-instance-method" class="signature"><strong>#logprobs</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Only valid if <code>#responseLogprobs</code> is <code>true</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#logprobs%3D%28logprobs%3AInt32%7CNil%29-instance-method" class="signature"><strong>#logprobs=</strong>(logprobs : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Only valid if <code>#responseLogprobs</code> is <code>true</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_output_tokens%3AInt32%7CNil-instance-method" class="signature"><strong>#max_output_tokens</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The maximum number of tokens to include in a candidate.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_output_tokens%3D%28max_output_tokens%3AInt32%7CNil%29-instance-method" class="signature"><strong>#max_output_tokens=</strong>(max_output_tokens : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The maximum number of tokens to include in a candidate.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#presence_penalty%3AFloat64%7CNil-instance-method" class="signature"><strong>#presence_penalty</strong> : Float64 | Nil</a>
+        
+          <div class="summary"><p>Presence penalty applied to the next token's logprobs if the token has already been seen in the response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#presence_penalty%3D%28presence_penalty%3AFloat64%7CNil%29-instance-method" class="signature"><strong>#presence_penalty=</strong>(presence_penalty : Float64 | Nil)</a>
+        
+          <div class="summary"><p>Presence penalty applied to the next token's logprobs if the token has already been seen in the response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_logprobs%3D%28response_logprobs%3ABool%7CNil%29-instance-method" class="signature"><strong>#response_logprobs=</strong>(response_logprobs : Bool | Nil)</a>
+        
+          <div class="summary"><p>If <code>true</code>, export the logprobs results in response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_logprobs%3F%3ABool%7CNil-instance-method" class="signature"><strong>#response_logprobs?</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>If <code>true</code>, export the logprobs results in response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_mime_type%3AString%7CNil-instance-method" class="signature"><strong>#response_mime_type</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Output response mimetype of the generated candidate text.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_mime_type%3D%28response_mime_type%3AString%7CNil%29-instance-method" class="signature"><strong>#response_mime_type=</strong>(response_mime_type : String | Nil)</a>
+        
+          <div class="summary"><p>Output response mimetype of the generated candidate text.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_schema%3ASchema%7CNil-instance-method" class="signature"><strong>#response_schema</strong> : Schema | Nil</a>
+        
+          <div class="summary"><p>Specifies the format of the JSON requested if response_mime_type is <code>application/json</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#response_schema%3D%28response_schema%3ASchema%7CNil%29-instance-method" class="signature"><strong>#response_schema=</strong>(response_schema : Schema | Nil)</a>
+        
+          <div class="summary"><p>Specifies the format of the JSON requested if response_mime_type is <code>application/json</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_sequences%3AArray%28String%29%7CNil-instance-method" class="signature"><strong>#stop_sequences</strong> : Array(String) | Nil</a>
+        
+          <div class="summary"><p>The set of character sequences (up to 5) that will stop output generation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop_sequences%3D%28stop_sequences%3AArray%28String%29%7CNil%29-instance-method" class="signature"><strong>#stop_sequences=</strong>(stop_sequences : Array(String) | Nil)</a>
+        
+          <div class="summary"><p>The set of character sequences (up to 5) that will stop output generation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#temperature%3AFloat64%7CNil-instance-method" class="signature"><strong>#temperature</strong> : Float64 | Nil</a>
+        
+          <div class="summary"><p>Controls the randomness of the output.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#temperature%3D%28temperature%3AFloat64%7CNil%29-instance-method" class="signature"><strong>#temperature=</strong>(temperature : Float64 | Nil)</a>
+        
+          <div class="summary"><p>Controls the randomness of the output.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#top_k%3AInt32%7CNil-instance-method" class="signature"><strong>#top_k</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The maximum number of tokens to consider when sampling.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#top_k%3D%28top_k%3AInt32%7CNil%29-instance-method" class="signature"><strong>#top_k=</strong>(top_k : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The maximum number of tokens to consider when sampling.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#top_p%3AFloat64%7CNil-instance-method" class="signature"><strong>#top_p</strong> : Float64 | Nil</a>
+        
+          <div class="summary"><p>The maximum cumulative probability of tokens to consider when sampling.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#top_p%3D%28top_p%3AFloat64%7CNil%29-instance-method" class="signature"><strong>#top_p=</strong>(top_p : Float64 | Nil)</a>
+        
+          <div class="summary"><p>The maximum cumulative probability of tokens to consider when sampling.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(candidate_count:Int32|Nil=nil,stop_sequences:Nil|Array(String)=nil,temperature:Float64|Nil=nil,max_output_tokens:Int32|Nil=nil,top_k:Int32|Nil=nil,top_p:Float64|Nil=nil,response_mime_type:Nil|String=nil,response_schema:Nil|Gemini::Schema=nil,presence_penalty:Float64|Nil=nil,frequency_penalty:Float64|Nil=nil,response_logprobs:Bool|Nil=nil,logprobs:Int32|Nil=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(candidate_count : Int32 | Nil = <span class="n">nil</span>, stop_sequences : Nil | Array(String) = <span class="n">nil</span>, temperature : Float64 | Nil = <span class="n">nil</span>, max_output_tokens : Int32 | Nil = <span class="n">nil</span>, top_k : Int32 | Nil = <span class="n">nil</span>, top_p : Float64 | Nil = <span class="n">nil</span>, response_mime_type : Nil | String = <span class="n">nil</span>, response_schema : Nil | <a href="../Gemini/Schema.html">Gemini::Schema</a> = <span class="n">nil</span>, presence_penalty : Float64 | Nil = <span class="n">nil</span>, frequency_penalty : Float64 | Nil = <span class="n">nil</span>, response_logprobs : Bool | Nil = <span class="n">nil</span>, logprobs : Int32 | Nil = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new%28candidate_count%3AInt32%7CNil%3Dnil%2Cstop_sequences%3ANil%7CArray%28String%29%3Dnil%2Ctemperature%3AFloat64%7CNil%3Dnil%2Cmax_output_tokens%3AInt32%7CNil%3Dnil%2Ctop_k%3AInt32%7CNil%3Dnil%2Ctop_p%3AFloat64%7CNil%3Dnil%2Cresponse_mime_type%3ANil%7CString%3Dnil%2Cresponse_schema%3ANil%7CGemini%3A%3ASchema%3Dnil%2Cpresence_penalty%3AFloat64%7CNil%3Dnil%2Cfrequency_penalty%3AFloat64%7CNil%3Dnil%2Cresponse_logprobs%3ABool%7CNil%3Dnil%2Clogprobs%3AInt32%7CNil%3Dnil%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="candidate_count:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>candidate_count</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#candidate_count%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Number of generated responses to return.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="candidate_count=(candidate_count:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>candidate_count=</strong>(candidate_count : Int32 | Nil)
+
+        <a class="method-permalink" href="#candidate_count%3D%28candidate_count%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Number of generated responses to return.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="frequency_penalty:Float64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>frequency_penalty</strong> : Float64 | Nil
+
+        <a class="method-permalink" href="#frequency_penalty%3AFloat64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Frequency penalty applied to the next token's logprobs, multiplied by the number of times each token has
+been seen in the response so far. <em>(Optional)</em>
+A positive penalty will discourage the use of tokens that have already been used, proportional to the number of
+times the token has been used: The more a token is used, the more dificult it is for the model to use that token
+again increasing the vocabulary of responses.</p>
+<p>Caution: A negative penalty will encourage the model to reuse tokens proportional to the number of times the
+token has been used. Small negative values will reduce the vocabulary of a response. Larger negative values will
+cause the model to start repeating a common token until it hits the maxOutputTokens limit: &quot;...the the the the
+the...&quot;.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="frequency_penalty=(frequency_penalty:Float64|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>frequency_penalty=</strong>(frequency_penalty : Float64 | Nil)
+
+        <a class="method-permalink" href="#frequency_penalty%3D%28frequency_penalty%3AFloat64%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Frequency penalty applied to the next token's logprobs, multiplied by the number of times each token has
+been seen in the response so far. <em>(Optional)</em>
+A positive penalty will discourage the use of tokens that have already been used, proportional to the number of
+times the token has been used: The more a token is used, the more dificult it is for the model to use that token
+again increasing the vocabulary of responses.</p>
+<p>Caution: A negative penalty will encourage the model to reuse tokens proportional to the number of times the
+token has been used. Small negative values will reduce the vocabulary of a response. Larger negative values will
+cause the model to start repeating a common token until it hits the maxOutputTokens limit: &quot;...the the the the
+the...&quot;.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="logprobs:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>logprobs</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#logprobs%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Only valid if <code>#responseLogprobs</code> is <code>true</code>. This sets the number of top logprobs to return at each decoding
+step in the <code>Candidate#logprobs_result</code>. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="logprobs=(logprobs:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>logprobs=</strong>(logprobs : Int32 | Nil)
+
+        <a class="method-permalink" href="#logprobs%3D%28logprobs%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Only valid if <code>#responseLogprobs</code> is <code>true</code>. This sets the number of top logprobs to return at each decoding
+step in the <code>Candidate#logprobs_result</code>. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_output_tokens:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>max_output_tokens</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#max_output_tokens%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of tokens to include in a candidate.
+If unset, this will default to output_token_limit specified in the model's specification.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_output_tokens=(max_output_tokens:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_output_tokens=</strong>(max_output_tokens : Int32 | Nil)
+
+        <a class="method-permalink" href="#max_output_tokens%3D%28max_output_tokens%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of tokens to include in a candidate.
+If unset, this will default to output_token_limit specified in the model's specification.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="presence_penalty:Float64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>presence_penalty</strong> : Float64 | Nil
+
+        <a class="method-permalink" href="#presence_penalty%3AFloat64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Presence penalty applied to the next token's logprobs if the token has already been seen in the response.
+<em>(Optional)</em>
+This penalty is binary on/off and not dependant on the number of times the token is used (after the first).
+Use frequencyPenalty for a penalty that increases with each use.
+A positive penalty will discourage the use of tokens that have already been used in the response, increasing the
+vocabulary.
+A negative penalty will encourage the use of tokens that have already been used in the response, decreasing the
+vocabulary.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="presence_penalty=(presence_penalty:Float64|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>presence_penalty=</strong>(presence_penalty : Float64 | Nil)
+
+        <a class="method-permalink" href="#presence_penalty%3D%28presence_penalty%3AFloat64%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Presence penalty applied to the next token's logprobs if the token has already been seen in the response.
+<em>(Optional)</em>
+This penalty is binary on/off and not dependant on the number of times the token is used (after the first).
+Use frequencyPenalty for a penalty that increases with each use.
+A positive penalty will discourage the use of tokens that have already been used in the response, increasing the
+vocabulary.
+A negative penalty will encourage the use of tokens that have already been used in the response, decreasing the
+vocabulary.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_logprobs=(response_logprobs:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>response_logprobs=</strong>(response_logprobs : Bool | Nil)
+
+        <a class="method-permalink" href="#response_logprobs%3D%28response_logprobs%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If <code>true</code>, export the logprobs results in response. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_logprobs?:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>response_logprobs?</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#response_logprobs%3F%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If <code>true</code>, export the logprobs results in response. <em>(Optional)</em></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_mime_type:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>response_mime_type</strong> : String | Nil
+
+        <a class="method-permalink" href="#response_mime_type%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output response mimetype of the generated candidate text.
+Supported mimetype:</p>
+<ul>
+<li><strong>text/plain</strong>: (default) Text output.</li>
+<li><strong>application/json</strong>: JSON response in the candidates.</li>
+</ul>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_mime_type=(response_mime_type:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>response_mime_type=</strong>(response_mime_type : String | Nil)
+
+        <a class="method-permalink" href="#response_mime_type%3D%28response_mime_type%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Output response mimetype of the generated candidate text.
+Supported mimetype:</p>
+<ul>
+<li><strong>text/plain</strong>: (default) Text output.</li>
+<li><strong>application/json</strong>: JSON response in the candidates.</li>
+</ul>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_schema:Schema|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>response_schema</strong> : <a href="../Gemini/Schema.html">Schema</a> | Nil
+
+        <a class="method-permalink" href="#response_schema%3ASchema%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Specifies the format of the JSON requested if response_mime_type is <code>application/json</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="response_schema=(response_schema:Schema|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>response_schema=</strong>(response_schema : <a href="../Gemini/Schema.html">Schema</a> | Nil)
+
+        <a class="method-permalink" href="#response_schema%3D%28response_schema%3ASchema%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Specifies the format of the JSON requested if response_mime_type is <code>application/json</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_sequences:Array(String)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_sequences</strong> : Array(String) | Nil
+
+        <a class="method-permalink" href="#stop_sequences%3AArray%28String%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The set of character sequences (up to 5) that will stop output generation.
+If specified, the API will stop at the first appearance of a stop sequence. The stop sequence will not be
+included as part of the response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop_sequences=(stop_sequences:Array(String)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>stop_sequences=</strong>(stop_sequences : Array(String) | Nil)
+
+        <a class="method-permalink" href="#stop_sequences%3D%28stop_sequences%3AArray%28String%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The set of character sequences (up to 5) that will stop output generation.
+If specified, the API will stop at the first appearance of a stop sequence. The stop sequence will not be
+included as part of the response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="temperature:Float64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>temperature</strong> : Float64 | Nil
+
+        <a class="method-permalink" href="#temperature%3AFloat64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Controls the randomness of the output.
+Values can range from <code>[0.0,1.0]</code>, inclusive. A value closer to <code>1.0</code> will produce responses that are more
+varied and creative, while a value closer to <code>0.0</code> will typically result in more straightforward responses from
+the model.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="temperature=(temperature:Float64|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>temperature=</strong>(temperature : Float64 | Nil)
+
+        <a class="method-permalink" href="#temperature%3D%28temperature%3AFloat64%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Controls the randomness of the output.
+Values can range from <code>[0.0,1.0]</code>, inclusive. A value closer to <code>1.0</code> will produce responses that are more
+varied and creative, while a value closer to <code>0.0</code> will typically result in more straightforward responses from
+the model.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="top_k:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>top_k</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#top_k%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of tokens to consider when sampling.
+The model uses combined Top-k and nucleus sampling. Top-k sampling considers the set of top_k most probable
+tokens. Defaults to 40.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="top_k=(top_k:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>top_k=</strong>(top_k : Int32 | Nil)
+
+        <a class="method-permalink" href="#top_k%3D%28top_k%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of tokens to consider when sampling.
+The model uses combined Top-k and nucleus sampling. Top-k sampling considers the set of top_k most probable
+tokens. Defaults to 40.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="top_p:Float64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>top_p</strong> : Float64 | Nil
+
+        <a class="method-permalink" href="#top_p%3AFloat64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum cumulative probability of tokens to consider when sampling.
+The model uses combined Top-k and nucleus sampling.
+Tokens are sorted based on their assigned probabilities so that only the most likely tokens are considered.
+Top-k sampling directly limits the maximum number of tokens to consider, while Nucleus sampling limits number of
+tokens based on the cumulative probability.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="top_p=(top_p:Float64|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>top_p=</strong>(top_p : Float64 | Nil)
+
+        <a class="method-permalink" href="#top_p%3D%28top_p%3AFloat64%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum cumulative probability of tokens to consider when sampling.
+The model uses combined Top-k and nucleus sampling.
+Tokens are sorted based on their assigned probabilities so that only the most likely tokens are considered.
+Top-k sampling directly limits the maximum number of tokens to consider, while Nucleus sampling limits number of
+tokens based on the cumulative probability.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+</div>
+
+</body>
+</html>
