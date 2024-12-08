@@ -3,6 +3,19 @@ require "json"
 require "./gemini/**"
 
 # Google Gemini API
+#
+# ```
+# require "gemini"
+#
+# Gemini.configure do |config|
+#   config.api_key = "GEMINI_API_KEY"
+# end
+#
+# model = Gemini::GenerativeModel.new("gemini-1.5-flash")
+# response = model.generate_content("Explain how AI works")
+#
+# puts response.text
+# ```
 module Gemini
   VERSION = "0.2.0"
   Log     = ::Log.for("gemini")
