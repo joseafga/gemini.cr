@@ -57,4 +57,62 @@ describe Gemini do
     response.usage_metadata.prompt_token_count.should eq 5
     response.usage_metadata.total_token_count.should eq 709
   end
+
+  it "function calling" do
+    func_found = false
+
+    model = Gemini::GenerativeModel.new(
+      "gemini-1.5-flash",
+      tools: [Gemini::Tool.new([
+        Gemini::FunctionDeclaration.new(
+          "control_light",
+          description: "Set the brightness and color temperature of a room light.",
+          parameters: Gemini::Schema.new(
+            type: :object,
+            properties: {
+              "brightness" => Gemini::Schema.new(
+                type: :string,
+                description: "Light level from 0 to 100. Zero is off and 100 is full brightness.",
+              ),
+              "color_temperature" => Gemini::Schema.new(
+                type: :string,
+                description: "Color temperature of the light.",
+                format: "enum",
+                enumeration: ["DAYLIGHT", "COOL", "WARM"]
+              ),
+            },
+            required: ["brightness", "color_temperature"]
+          )
+        ),
+      ])]
+    )
+
+    chat = [] of Gemini::Content
+    chat << Gemini::Content.new("Dim the lights so the room feels cozy and warm.", role: :user)
+    response = model.generate_content(chat)
+    chat << Gemini::Content.new(response.parts, role: :model)
+
+    # Check that you got the expected function callback.
+    response.parts.each &.function_call? do |func_call|
+      if func_call.name == "control_light"
+        func_found = true
+        color_temp = func_call.args.try &.["color_temperature"]
+
+        ["DAYLIGHT", "COOL", "WARM"].should contain(color_temp)
+      end
+    end
+
+    # Send the hypothetical API result back to the generative model.
+    chat << Gemini::Content.new(
+      Gemini::Part.new(Gemini::FunctionResponse.new(
+        "control_light",
+        JSON.parse %({"brightness": "30", "color_temperature": "warm"})
+      )),
+      role: :function
+    )
+    response = model.generate_content(chat)
+
+    response.text.empty?.should be_false
+    func_found.should be_true
+  end
 end
