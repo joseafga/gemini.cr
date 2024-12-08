@@ -1,7 +1,7 @@
 module Gemini
   # Response from the model supporting multiple candidate responses.
   #
-  # See: https://ai.google.dev/api/generate-content#generatecontentresponse
+  # [API Reference](https://ai.google.dev/api/generate-content#generatecontentresponse)
   struct GenerateContentResponse
     include JSON::Serializable
     # Candidate responses from the model.
@@ -44,7 +44,7 @@ module Gemini
 
     # A response candidate generated from the model.
     #
-    # See: https://ai.google.dev/api/generate-content#candidate
+    # [API Reference](https://ai.google.dev/api/generate-content#candidate)
     struct Candidate
       include JSON::Serializable
       # Generated content returned from the model. *(Output only)*
@@ -85,7 +85,7 @@ module Gemini
 
     # A set of the feedback metadata the prompt specified in `Gemini::Content`.
     #
-    # See: https://ai.google.dev/api/generate-content#PromptFeedback
+    # [API Reference](https://ai.google.dev/api/generate-content#PromptFeedback)
     struct PromptFeedback
       include JSON::Serializable
       # If set, the prompt was blocked and no candidates are returned. *(Optional)*
@@ -102,7 +102,7 @@ module Gemini
 
     # Metadata on the generation request's token usage.
     #
-    # See: https://ai.google.dev/api/generate-content#UsageMetadata
+    # [API Reference](https://ai.google.dev/api/generate-content#UsageMetadata)
     struct UsageMetadata
       include JSON::Serializable
       # Number of tokens in the prompt. When cachedContent is set, this is still the total effective prompt size meaning

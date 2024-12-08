@@ -1,7 +1,7 @@
 module Gemini
   # Tool details that the model may use to generate response.
   #
-  # See: https://ai.google.dev/api/caching#Tool
+  # [API Reference](https://ai.google.dev/api/caching#Tool)
   struct Tool
     include JSON::Serializable
     # A list of `FunctionDeclarations` available to the model that can be used for function calling. *(Optional)*
@@ -18,7 +18,7 @@ module Gemini
 
   # Structured representation of a function declaration as defined by the OpenAPI 3.03 specification.
   #
-  # See: https://ai.google.dev/api/caching#FunctionDeclaration
+  # [API Reference](https://ai.google.dev/api/caching#FunctionDeclaration)
   struct FunctionDeclaration
     include JSON::Serializable
     # The name of the function. *(Required)*
@@ -52,7 +52,7 @@ module Gemini
 
   # This should contain the result of a `FunctionCall` made based on model prediction.
   #
-  # See: https://ai.google.dev/api/caching#FunctionResponse
+  # [API Reference](https://ai.google.dev/api/caching#FunctionResponse)
   struct FunctionResponse
     include JSON::Serializable
     # The name of the function to call. *(Required)*
@@ -70,7 +70,7 @@ module Gemini
 
   # The Tool configuration containing parameters for specifying Tool use in the request.
   #
-  # See: https://ai.google.dev/api/caching#ToolConfig
+  # [API Reference](https://ai.google.dev/api/caching#ToolConfig)
   struct ToolConfig
     include JSON::Serializable
     # Function calling config. *(Optional)*
@@ -89,7 +89,7 @@ module Gemini
 
     # Defines the execution behavior for function calling by defining the execution mode.
     #
-    # See: https://ai.google.dev/api/caching#Mode
+    # [API Reference](https://ai.google.dev/api/caching#Mode)
     enum Mode
       ModeUnspecified # Unspecified function calling mode. This value should not be used.
       Auto            # Model decides to predict either a function call or a natural language response.

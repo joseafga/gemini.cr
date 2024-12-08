@@ -4,14 +4,14 @@ require "mime/media_type"
 module Gemini
   # Generates a model response given an input.
   #
-  # See: https://ai.google.dev/api/generate-content#method:-models.generatecontent
+  # [API Reference](https://ai.google.dev/api/generate-content#method:-models.generatecontent)
   class GenerativeModel
     include JSON::Serializable
     HEADERS = HTTP::Headers{"Content-Type" => "application/json"}
 
     # Developer set `system instruction(s)`. Currently, text only. *(Optional)*
     #
-    # See: https://ai.google.dev/gemini-api/docs/system-instructions
+    # [API Reference](https://ai.google.dev/gemini-api/docs/system-instructions)
     @[JSON::Field(key: "systemInstruction")]
     property system_instruction : Content?
 
@@ -90,7 +90,7 @@ module Gemini
   # Configuration options for model generation and outputs.
   # Not all parameters are configurable for every model.
   #
-  # See: https://ai.google.dev/api/generate-content#generationconfig
+  # [API Reference](https://ai.google.dev/api/generate-content#generationconfig)
   struct GenerationConfig
     include JSON::Serializable
     # Number of generated responses to return.
