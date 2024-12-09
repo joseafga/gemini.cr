@@ -30,9 +30,7 @@ module Gemini
 
     def try_parse_error
       @error = Error.from_json(response, root: "error")
-      true
     rescue
-      false
     end
   end
 
