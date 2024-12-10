@@ -373,7 +373,7 @@ Text should not be sent as raw bytes, use the <code><a href="../Gemini/Text.html
       <li class="entry-summary">
         <a href="#inspect%28io%3AIO%29-instance-method" class="signature"><strong>#inspect</strong>(io : IO)</a>
         
-          <div class="summary"><p>Truncate data for better visualization</p></div>
+          <div class="summary"><p>Appends this struct's name and instance variables names and values to the given IO.</p></div>
         
       </li>
     
@@ -533,7 +533,20 @@ A base64-encoded string.</p>
       
         <div class="doc">
           
-          <p>Truncate data for better visualization</p>
+            <div class="doc-inherited">
+              Description copied from struct Struct
+            </div>
+          
+          <p>Appends this struct's name and instance variables names and values
+to the given IO.</p>
+<pre><code class="language-crystal"><span class="k">struct</span> <span class="t">Point</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@x : <span class="t">Int32</span>, @y : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+p1 <span class="o">=</span> <span class="t">Point</span>.new <span class="n">1</span>, <span class="n">2</span>
+p1.to_s    <span class="c"># &quot;Point(@x=1, @y=2)&quot;</span>
+p1.inspect <span class="c"># &quot;Point(@x=1, @y=2)&quot;</span></code></pre>
         </div>
       
       <br/>
