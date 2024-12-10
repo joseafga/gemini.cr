@@ -58,7 +58,7 @@ module Gemini
     end
 
     def generate_content(text : String) : GenerateContentResponse
-      @contents = Content.new(text, :user)
+      @contents = Content.new(text, role: :user)
       request
     end
 

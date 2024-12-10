@@ -97,14 +97,14 @@ module Gemini
     def initialize(@parts : Array(Part), @role = nil)
     end
 
-    # Create content with a single part
-    def initialize(part : Part, @role = nil)
-      @parts << part
+    # Create content with one or more `Part`
+    def initialize(*parts : Part, @role = nil)
+      parts.each { |part| @parts << part }
     end
 
-    # Create content with a text part already
-    def initialize(text : String, @role = nil)
-      @parts << Part.new(text)
+    # Create content with one or more *data* of `Part`
+    def initialize(*data, @role = nil)
+      data.each { |i| @parts << Part.new(i) }
     end
 
     # Remove empty texts `Part` from JSON to fix: "Unable to submit request because it has an empty text parameter."

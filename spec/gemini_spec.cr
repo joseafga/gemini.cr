@@ -105,10 +105,10 @@ describe Gemini do
 
     # Send the hypothetical API result back to the generative model.
     chat << Gemini::Content.new(
-      Gemini::Part.new(Gemini::FunctionResponse.new(
+      Gemini::FunctionResponse.new(
         "control_light",
         JSON.parse %({"brightness": "30", "color_temperature": "warm"})
-      )),
+      ),
       role: :function
     )
     response = model.generate_content(chat)
@@ -122,11 +122,7 @@ describe Gemini do
     image = File.read "#{Samples::PATH}/cat.jpg"
     inline_data = Gemini::InlineData.new("image/jpeg", Base64.strict_encode(image))
 
-    message = Gemini::Content.new([
-      Gemini::Part.new(inline_data),
-      Gemini::Part.new("Caption this image."),
-    ], role: :user)
-
+    message = Gemini::Content.new(inline_data, "Caption this image.", role: :user)
     response = model.generate_content(message)
 
     response.text.empty?.should be_false
