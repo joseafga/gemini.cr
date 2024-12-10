@@ -226,6 +226,12 @@ module Gemini
     def initialize(@mime_type, @data)
     end
 
+    def inspect(io : IO)
+      # Truncate data for better visualization
+      trunc = data.size > 80 ? data[..75] + "..." : data
+      io << %(#{self.class}("#{mime_type}":"#{trunc})")
+    end
+
     def to_json_object_key
       "inlineData"
     end
