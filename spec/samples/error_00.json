@@ -1,0 +1,21 @@
+{
+  "error": {
+    "code": 400,
+    "message": "Invalid JSON payload received. Unknown name \"pars\" at 'system_instruction': Cannot find field.\nInvalid JSON payload received. Unknown name \"xyz\": Cannot find field.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.BadRequest",
+        "fieldViolations": [
+          {
+            "field": "system_instruction",
+            "description": "Invalid JSON payload received. Unknown name \"pars\" at 'system_instruction': Cannot find field."
+          },
+          {
+            "description": "Invalid JSON payload received. Unknown name \"xyz\": Cannot find field."
+          }
+        ]
+      }
+    ]
+  }
+}

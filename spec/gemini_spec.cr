@@ -50,7 +50,7 @@ describe Gemini do
 
   # TODO: citation API
   it "response with citation metadata" do
-    response = Gemini::GenerateContentResponse.from_json SAMPLES["citation_metadata_00"]
+    response = Gemini::GenerateContentResponse.from_json Samples.load_json("citation_metadata_00")
 
     response.text.empty?.should be_false
     response.candidates.first.finish_reason.should eq Gemini::FinishReason::Stop

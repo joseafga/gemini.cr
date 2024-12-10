@@ -1,0 +1,36 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Artificial intelligence (AI) is a broad field encompassing many techniques, but at its core, it aims to create systems that can perform tasks that typically require human intelligence..."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "citationMetadata": {
+        "citationSources": [
+          {
+            "startIndex": 24,
+            "endIndex": 28,
+            "uri": "https://example.com/path/to/article"
+          },
+          {
+            "startIndex": 76,
+            "endIndex": 91,
+            "uri": "https://some.site/path/to/something"
+          }
+        ]
+      },
+      "avgLogprobs": -0.20354270935058594
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 5,
+    "candidatesTokenCount": 704,
+    "totalTokenCount": 709
+  },
+  "modelVersion": "gemini-1.5-flash"
+}
