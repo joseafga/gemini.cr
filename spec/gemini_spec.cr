@@ -1,3 +1,4 @@
+require "base64"
 require "./spec_helper"
 
 describe Gemini do
@@ -114,5 +115,20 @@ describe Gemini do
 
     response.text.empty?.should be_false
     func_found.should be_true
+  end
+
+  it "generate content with inline data" do
+    model = Gemini::GenerativeModel.new("gemini-1.5-flash")
+    image = File.read "#{Samples::PATH}/cat.jpg"
+    inline_data = Gemini::InlineData.new("image/jpeg", Base64.strict_encode(image))
+
+    message = Gemini::Content.new([
+      Gemini::Part.new(inline_data),
+      Gemini::Part.new("Caption this image."),
+    ], role: :user)
+
+    response = model.generate_content(message)
+
+    response.text.empty?.should be_false
   end
 end

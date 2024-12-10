@@ -62,8 +62,7 @@ module Gemini
       request
     end
 
-    def generate_content(data : Array | Deque) : GenerateContentResponse
-      @contents = data
+    def generate_content(@contents) : GenerateContentResponse
       request
     end
 
