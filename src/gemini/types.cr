@@ -287,12 +287,4 @@ module Gemini
     def initialize(@category, @threshold)
     end
   end
-
-  # Simplified error response
-  struct Error
-    include JSON::Serializable
-    getter code : Int32
-    getter message : String
-    getter status : String
-  end
 end

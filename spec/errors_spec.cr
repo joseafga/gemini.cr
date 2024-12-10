@@ -18,20 +18,20 @@ describe Gemini do
   end
 
   it "bad response by invalid argument", tags: "error" do
-    ex = expect_raises(Gemini::BadResponseException) do
+    ex = expect_raises(Gemini::BadResponseException, "Invalid JSON payload received. Unknown name \"pars\" at 'system_instruction': Cannot find field.\nInvalid JSON payload received. Unknown name \"xyz\": Cannot find field.") do
       raise Gemini::BadResponseException.new "Can't parse JSON response", Samples.load_json("error_00")
     end
 
-    ex.error.try &.code.should eq 400
-    ex.error.try &.status.should eq "INVALID_ARGUMENT"
+    ex.code.should eq 400
+    ex.status.should eq "INVALID_ARGUMENT"
   end
 
   it "bad response by the service is currently unavailable", tags: "error" do
-    ex = expect_raises(Gemini::BadResponseException) do
+    ex = expect_raises(Gemini::BadResponseException, "The service is currently unavailable.") do
       raise Gemini::BadResponseException.new "Can't parse JSON response", Samples.load_json("error_01")
     end
 
-    ex.error.try &.code.should eq 503
-    ex.error.try &.status.should eq "UNAVAILABLE"
+    ex.code.should eq 503
+    ex.status.should eq "UNAVAILABLE"
   end
 end

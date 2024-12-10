@@ -21,15 +21,28 @@ module Gemini
   Log     = ::Log.for("gemini")
 
   class BadResponseException < Exception
-    getter error : Error?
-    getter response : String
+    getter code : Int32?
+    getter status : String?
 
-    def initialize(@message, @response, @cause = nil)
-      try_parse_error
+    # The *message* is a fallback, after parsing json *message* will be replaced (or not).
+    def initialize(@message, response, @cause = nil)
+      try_parse_error JSON::PullParser.new(response)
     end
 
-    def try_parse_error
-      @error = Error.from_json(response, root: "error")
+    def try_parse_error(pull)
+      pull.read_begin_object
+      pull.read_object_key # => "error"
+      pull.read_object do |key|
+        case key
+        when "code"
+          @code = pull.read?(Int32)
+        when "status"
+          @status = pull.read_string
+        when "message"
+          @message = pull.read_string
+        end
+      end
+      pull.read_end_object
     rescue
     end
   end
