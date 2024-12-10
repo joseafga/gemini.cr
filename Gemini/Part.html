@@ -67,6 +67,11 @@
       
     </li>
   
+  <li class=" " data-id="gemini/Gemini/Blob" data-name="gemini::blob">
+      <a href="../Gemini/Blob.html">Blob</a>
+      
+    </li>
+  
   <li class=" " data-id="gemini/Gemini/BlockReason" data-name="gemini::blockreason">
       <a href="../Gemini/BlockReason.html">BlockReason</a>
       
@@ -89,11 +94,6 @@
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="gemini/Gemini/Error" data-name="gemini::error">
-      <a href="../Gemini/Error.html">Error</a>
       
     </li>
   
@@ -179,6 +179,11 @@
   
   <li class=" " data-id="gemini/Gemini/HarmProbability" data-name="gemini::harmprobability">
       <a href="../Gemini/HarmProbability.html">HarmProbability</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/InlineData" data-name="gemini::inlinedata">
+      <a href="../Gemini/InlineData.html">InlineData</a>
       
     </li>
   
@@ -271,7 +276,7 @@
   </h2>
 
   <p>A datatype containing media that is part of a multi-part <code><a href="../Gemini/Content.html">Content</a></code> message.</p>
-<p>Union field <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code>. <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> can be only one of the following:</p>
+<p>Union field <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code>. <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> can be only one of the following:</p>
 <ul>
 <li><strong>text</strong>: string - Inline text.</li>
 <li><strong>inlineData</strong>: object (Blob) - Inline media bytes.</li>
@@ -336,7 +341,7 @@ is used as context to the model.</li>
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28data%3AGemini%3A%3AFunctionCall%7CGemini%3A%3AFunctionResponse%7CString%29-class-method" class="signature"><strong>.new</strong>(data : Gemini::FunctionCall | Gemini::FunctionResponse | String)</a>
+        <a href="#new%28data%3AGemini%3A%3ABlob%7CGemini%3A%3AFunctionCall%7CGemini%3A%3AFunctionResponse%7CString%29-class-method" class="signature"><strong>.new</strong>(data : Gemini::Blob | Gemini::FunctionCall | Gemini::FunctionResponse | String)</a>
         
       </li>
     
@@ -359,12 +364,12 @@ is used as context to the model.</li>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method" class="signature"><strong>#data</strong> : Text | FunctionCall | FunctionResponse</a>
+        <a href="#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method" class="signature"><strong>#data</strong> : Text | FunctionCall | FunctionResponse | InlineData</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#data%3D%28data%3AText%7CFunctionCall%7CFunctionResponse%29-instance-method" class="signature"><strong>#data=</strong>(data : Text | FunctionCall | FunctionResponse)</a>
+        <a href="#data%3D%28data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData%29-instance-method" class="signature"><strong>#data=</strong>(data : Text | FunctionCall | FunctionResponse | InlineData)</a>
         
       </li>
     
@@ -378,14 +383,14 @@ is used as context to the model.</li>
       <li class="entry-summary">
         <a href="#function_call%3F-instance-method" class="signature"><strong>#function_call?</strong></a>
         
-          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionCall.html">FunctionCall</a></code> will return value, or nil if not</p></div>
+          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionCall.html">FunctionCall</a></code> will return value, or nil if not</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#function_call%3F%28%26%29-instance-method" class="signature"><strong>#function_call?</strong>(&)</a>
         
-          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p></div>
+          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p></div>
         
       </li>
     
@@ -399,14 +404,35 @@ is used as context to the model.</li>
       <li class="entry-summary">
         <a href="#function_response%3F-instance-method" class="signature"><strong>#function_response?</strong></a>
         
-          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionResponse.html">FunctionResponse</a></code> will return value, or nil if not</p></div>
+          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionResponse.html">FunctionResponse</a></code> will return value, or nil if not</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#function_response%3F%28%26%29-instance-method" class="signature"><strong>#function_response?</strong>(&)</a>
         
-          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p></div>
+          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inline_data-instance-method" class="signature"><strong>#inline_data</strong></a>
+        
+          <div class="summary"><p>Same as <code><a href="../Gemini/Part.html#inline_data%3F-instance-method">#inline_data?</a></code> but raise error if nil</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inline_data%3F-instance-method" class="signature"><strong>#inline_data?</strong></a>
+        
+          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/InlineData.html">InlineData</a></code> will return value, or nil if not</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inline_data%3F%28%26%29-instance-method" class="signature"><strong>#inline_data?</strong>(&)</a>
+        
+          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p></div>
         
       </li>
     
@@ -420,14 +446,14 @@ is used as context to the model.</li>
       <li class="entry-summary">
         <a href="#text%3F-instance-method" class="signature"><strong>#text?</strong></a>
         
-          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/Text.html">Text</a></code> will return value, or nil if not</p></div>
+          <div class="summary"><p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/Text.html">Text</a></code> will return value, or nil if not</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#text%3F%28%26%29-instance-method" class="signature"><strong>#text?</strong>(&)</a>
         
-          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p></div>
+          <div class="summary"><p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p></div>
         
       </li>
     
@@ -514,12 +540,12 @@ is used as context to the model.</li>
       </div>
     </div>
   
-    <div class="entry-detail" id="new(data:Gemini::FunctionCall|Gemini::FunctionResponse|String)-class-method">
+    <div class="entry-detail" id="new(data:Gemini::Blob|Gemini::FunctionCall|Gemini::FunctionResponse|String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(data : <a href="../Gemini/FunctionCall.html">Gemini::FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">Gemini::FunctionResponse</a> | String)
+        def self.<strong>new</strong>(data : <a href="../Gemini/Blob.html">Gemini::Blob</a> | <a href="../Gemini/FunctionCall.html">Gemini::FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">Gemini::FunctionResponse</a> | String)
 
-        <a class="method-permalink" href="#new%28data%3AGemini%3A%3AFunctionCall%7CGemini%3A%3AFunctionResponse%7CString%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28data%3AGemini%3A%3ABlob%7CGemini%3A%3AFunctionCall%7CGemini%3A%3AFunctionResponse%7CString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -544,12 +570,12 @@ is used as context to the model.</li>
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="data:Text|FunctionCall|FunctionResponse-instance-method">
+    <div class="entry-detail" id="data:Text|FunctionCall|FunctionResponse|InlineData-instance-method">
       <div class="signature">
         
-        def <strong>data</strong> : <a href="../Gemini/Text.html">Text</a> | <a href="../Gemini/FunctionCall.html">FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">FunctionResponse</a>
+        def <strong>data</strong> : <a href="../Gemini/Text.html">Text</a> | <a href="../Gemini/FunctionCall.html">FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">FunctionResponse</a> | <a href="../Gemini/InlineData.html">InlineData</a>
 
-        <a class="method-permalink" href="#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#</a>
+        <a class="method-permalink" href="#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#</a>
       </div>
       
       <br/>
@@ -558,12 +584,12 @@ is used as context to the model.</li>
       </div>
     </div>
   
-    <div class="entry-detail" id="data=(data:Text|FunctionCall|FunctionResponse)-instance-method">
+    <div class="entry-detail" id="data=(data:Text|FunctionCall|FunctionResponse|InlineData)-instance-method">
       <div class="signature">
         
-        def <strong>data=</strong>(data : <a href="../Gemini/Text.html">Text</a> | <a href="../Gemini/FunctionCall.html">FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">FunctionResponse</a>)
+        def <strong>data=</strong>(data : <a href="../Gemini/Text.html">Text</a> | <a href="../Gemini/FunctionCall.html">FunctionCall</a> | <a href="../Gemini/FunctionResponse.html">FunctionResponse</a> | <a href="../Gemini/InlineData.html">InlineData</a>)
 
-        <a class="method-permalink" href="#data%3D%28data%3AText%7CFunctionCall%7CFunctionResponse%29-instance-method">#</a>
+        <a class="method-permalink" href="#data%3D%28data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData%29-instance-method">#</a>
       </div>
       
       <br/>
@@ -601,7 +627,7 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionCall.html">FunctionCall</a></code> will return value, or nil if not</p>
+          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionCall.html">FunctionCall</a></code> will return value, or nil if not</p>
         </div>
       
       <br/>
@@ -620,7 +646,7 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p>
+          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p>
         </div>
       
       <br/>
@@ -658,7 +684,7 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionResponse.html">FunctionResponse</a></code> will return value, or nil if not</p>
+          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/FunctionResponse.html">FunctionResponse</a></code> will return value, or nil if not</p>
         </div>
       
       <br/>
@@ -677,7 +703,64 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p>
+          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inline_data-instance-method">
+      <div class="signature">
+        
+        def <strong>inline_data</strong>
+
+        <a class="method-permalink" href="#inline_data-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Same as <code><a href="../Gemini/Part.html#inline_data%3F-instance-method">#inline_data?</a></code> but raise error if nil</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inline_data?-instance-method">
+      <div class="signature">
+        
+        def <strong>inline_data?</strong>
+
+        <a class="method-permalink" href="#inline_data%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/InlineData.html">InlineData</a></code> will return value, or nil if not</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inline_data?(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>inline_data?</strong>(&)
+
+        <a class="method-permalink" href="#inline_data%3F%28%26%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p>
         </div>
       
       <br/>
@@ -715,7 +798,7 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> type is <code><a href="../Gemini/Text.html">Text</a></code> will return value, or nil if not</p>
+          <p>if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> type is <code><a href="../Gemini/Text.html">Text</a></code> will return value, or nil if not</p>
         </div>
       
       <br/>
@@ -734,7 +817,7 @@ is used as context to the model.</li>
       
         <div class="doc">
           
-          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse-instance-method">#data</a></code> is a diferent type</p>
+          <p>Do not yield if <code><a href="../Gemini/Part.html#data%3AText%7CFunctionCall%7CFunctionResponse%7CInlineData-instance-method">#data</a></code> is a diferent type</p>
         </div>
       
       <br/>

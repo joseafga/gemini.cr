@@ -67,6 +67,11 @@
       
     </li>
   
+  <li class=" " data-id="gemini/Gemini/Blob" data-name="gemini::blob">
+      <a href="../Gemini/Blob.html">Blob</a>
+      
+    </li>
+  
   <li class=" " data-id="gemini/Gemini/BlockReason" data-name="gemini::blockreason">
       <a href="../Gemini/BlockReason.html">BlockReason</a>
       
@@ -89,11 +94,6 @@
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="gemini/Gemini/Error" data-name="gemini::error">
-      <a href="../Gemini/Error.html">Error</a>
       
     </li>
   
@@ -179,6 +179,11 @@
   
   <li class=" " data-id="gemini/Gemini/HarmProbability" data-name="gemini::harmprobability">
       <a href="../Gemini/HarmProbability.html">HarmProbability</a>
+      
+    </li>
+  
+  <li class=" " data-id="gemini/Gemini/InlineData" data-name="gemini::inlinedata">
+      <a href="../Gemini/InlineData.html">InlineData</a>
       
     </li>
   
@@ -304,7 +309,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28message%2Cresponse%3AString%2Ccause%3Dnil%29-class-method" class="signature"><strong>.new</strong>(message, response : String, cause = <span class="n">nil</span>)</a>
+        <a href="#new%28message%2Cresponse%2Ccause%3Dnil%29-class-method" class="signature"><strong>.new</strong>(message, response, cause = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>The <em>message</em> is a fallback, after parsing json <em>message</em> will be replaced (or not).</p></div>
         
       </li>
     
@@ -327,17 +334,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#error%3AError%7CNil-instance-method" class="signature"><strong>#error</strong> : Error | Nil</a>
+        <a href="#code%3AInt32%7CNil-instance-method" class="signature"><strong>#code</strong> : Int32 | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#response%3AString-instance-method" class="signature"><strong>#response</strong> : String</a>
+        <a href="#status%3AString%7CNil-instance-method" class="signature"><strong>#status</strong> : String | Nil</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#try_parse_error-instance-method" class="signature"><strong>#try_parse_error</strong></a>
+        <a href="#try_parse_error%28pull%29-instance-method" class="signature"><strong>#try_parse_error</strong>(pull)</a>
         
       </li>
     
@@ -398,13 +405,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(message,response:String,cause=nil)-class-method">
+    <div class="entry-detail" id="new(message,response,cause=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(message, response : String, cause = <span class="n">nil</span>)
+        def self.<strong>new</strong>(message, response, cause = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28message%2Cresponse%3AString%2Ccause%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28message%2Cresponse%2Ccause%3Dnil%29-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>The <em>message</em> is a fallback, after parsing json <em>message</em> will be replaced (or not).</p>
+        </div>
       
       <br/>
       <div>
@@ -428,12 +440,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="error:Error|Nil-instance-method">
+    <div class="entry-detail" id="code:Int32|Nil-instance-method">
       <div class="signature">
         
-        def <strong>error</strong> : <a href="../Gemini/Error.html">Error</a> | Nil
+        def <strong>code</strong> : Int32 | Nil
 
-        <a class="method-permalink" href="#error%3AError%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#code%3AInt32%7CNil-instance-method">#</a>
       </div>
       
       <br/>
@@ -442,12 +454,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="response:String-instance-method">
+    <div class="entry-detail" id="status:String|Nil-instance-method">
       <div class="signature">
         
-        def <strong>response</strong> : String
+        def <strong>status</strong> : String | Nil
 
-        <a class="method-permalink" href="#response%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#status%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
@@ -456,12 +468,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="try_parse_error-instance-method">
+    <div class="entry-detail" id="try_parse_error(pull)-instance-method">
       <div class="signature">
         
-        def <strong>try_parse_error</strong>
+        def <strong>try_parse_error</strong>(pull)
 
-        <a class="method-permalink" href="#try_parse_error-instance-method">#</a>
+        <a class="method-permalink" href="#try_parse_error%28pull%29-instance-method">#</a>
       </div>
       
       <br/>

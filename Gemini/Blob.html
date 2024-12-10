@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="gemini">
-  <title>Gemini::Tool - gemini 0.2.0</title>
+  <title>Gemini::Blob - gemini 0.2.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -67,7 +67,7 @@
       
     </li>
   
-  <li class=" " data-id="gemini/Gemini/Blob" data-name="gemini::blob">
+  <li class=" current" data-id="gemini/Gemini/Blob" data-name="gemini::blob">
       <a href="../Gemini/Blob.html">Blob</a>
       
     </li>
@@ -232,7 +232,7 @@
       
     </li>
   
-  <li class=" current" data-id="gemini/Gemini/Tool" data-name="gemini::tool">
+  <li class=" " data-id="gemini/Gemini/Tool" data-name="gemini::tool">
       <a href="../Gemini/Tool.html">Tool</a>
       
     </li>
@@ -256,12 +256,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> Gemini::<wbr>Tool
+  <span class="kind">struct</span> Gemini::<wbr>Blob
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Gemini/Tool.html">Gemini::Tool</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Gemini/Blob.html">Gemini::Blob</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -275,8 +275,9 @@
     Overview
   </h2>
 
-  <p>Tool details that the model may use to generate response.</p>
-<p><a href="https://ai.google.dev/api/caching#Tool">API Reference</a></p>
+  <p>Raw media bytes.
+Text should not be sent as raw bytes, use the <code><a href="../Gemini/Text.html">Text</a></code> type.</p>
+<p><a href="https://ai.google.dev/api/caching#Blob">API Reference</a></p>
 
 
 
@@ -315,7 +316,7 @@
   </h2>
   
     
-      gemini/function_calling.cr
+      gemini/types.cr
     
     <br/>
   
@@ -335,12 +336,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        <a href="#new%28mime_type%3AString%2Cdata%3AString%29-class-method" class="signature"><strong>.new</strong>(mime_type : String, data : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28function_declarations%3ANil%7CArray%28Gemini%3A%3AFunctionDeclaration%29%3Dnil%29-class-method" class="signature"><strong>.new</strong>(function_declarations : Nil | Array(Gemini::FunctionDeclaration) = <span class="n">nil</span>)</a>
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
         
       </li>
     
@@ -363,16 +364,28 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#function_declarations%3AArray%28FunctionDeclaration%29%7CNil-instance-method" class="signature"><strong>#function_declarations</strong> : Array(FunctionDeclaration) | Nil</a>
+        <a href="#data%3AString-instance-method" class="signature"><strong>#data</strong> : String</a>
         
-          <div class="summary"><p>A list of <code>FunctionDeclarations</code> available to the model that can be used for function calling.</p></div>
+          <div class="summary"><p>Raw bytes for media formats.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#function_declarations%3D%28function_declarations%3AArray%28FunctionDeclaration%29%7CNil%29-instance-method" class="signature"><strong>#function_declarations=</strong>(function_declarations : Array(FunctionDeclaration) | Nil)</a>
+        <a href="#inspect%28io%3AIO%29-instance-method" class="signature"><strong>#inspect</strong>(io : IO)</a>
         
-          <div class="summary"><p>A list of <code>FunctionDeclarations</code> available to the model that can be used for function calling.</p></div>
+          <div class="summary"><p>Truncate data for better visualization</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mime_type%3AString-instance-method" class="signature"><strong>#mime_type</strong> : String</a>
+        
+          <div class="summary"><p>The IANA standard MIME type of the source data.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_json_object_key-instance-method" class="signature"><strong>#to_json_object_key</strong></a>
         
       </li>
     
@@ -446,12 +459,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(mime_type:String,data:String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(pull : JSON::PullParser)
+        def self.<strong>new</strong>(mime_type : String, data : String)
 
-        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28mime_type%3AString%2Cdata%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -460,12 +473,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(function_declarations:Nil|Array(Gemini::FunctionDeclaration)=nil)-class-method">
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(function_declarations : Nil | Array(<a href="../Gemini/FunctionDeclaration.html">Gemini::FunctionDeclaration</a>) = <span class="n">nil</span>)
+        def self.<strong>new</strong>(pull : JSON::PullParser)
 
-        <a class="method-permalink" href="#new%28function_declarations%3ANil%7CArray%28Gemini%3A%3AFunctionDeclaration%29%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
       </div>
       
       <br/>
@@ -490,17 +503,18 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="function_declarations:Array(FunctionDeclaration)|Nil-instance-method">
+    <div class="entry-detail" id="data:String-instance-method">
       <div class="signature">
         
-        def <strong>function_declarations</strong> : Array(<a href="../Gemini/FunctionDeclaration.html">FunctionDeclaration</a>) | Nil
+        def <strong>data</strong> : String
 
-        <a class="method-permalink" href="#function_declarations%3AArray%28FunctionDeclaration%29%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#data%3AString-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>A list of <code>FunctionDeclarations</code> available to the model that can be used for function calling. <em>(Optional)</em></p>
+          <p>Raw bytes for media formats.
+A base64-encoded string.</p>
         </div>
       
       <br/>
@@ -509,18 +523,53 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="function_declarations=(function_declarations:Array(FunctionDeclaration)|Nil)-instance-method">
+    <div class="entry-detail" id="inspect(io:IO)-instance-method">
       <div class="signature">
         
-        def <strong>function_declarations=</strong>(function_declarations : Array(<a href="../Gemini/FunctionDeclaration.html">FunctionDeclaration</a>) | Nil)
+        def <strong>inspect</strong>(io : IO)
 
-        <a class="method-permalink" href="#function_declarations%3D%28function_declarations%3AArray%28FunctionDeclaration%29%7CNil%29-instance-method">#</a>
+        <a class="method-permalink" href="#inspect%28io%3AIO%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>A list of <code>FunctionDeclarations</code> available to the model that can be used for function calling. <em>(Optional)</em></p>
+          <p>Truncate data for better visualization</p>
         </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mime_type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>mime_type</strong> : String
+
+        <a class="method-permalink" href="#mime_type%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The IANA standard MIME type of the source data.
+Examples: <strong>&quot;image/png&quot;</strong> If an unsupported MIME type is provided, an error will be returned.
+For a complete list of supported types, see <a href="https://ai.google.dev/gemini-api/docs/prompting_with_media#supported_file_formats">Supported file formats</a>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_json_object_key-instance-method">
+      <div class="signature">
+        
+        def <strong>to_json_object_key</strong>
+
+        <a class="method-permalink" href="#to_json_object_key-instance-method">#</a>
+      </div>
       
       <br/>
       <div>
